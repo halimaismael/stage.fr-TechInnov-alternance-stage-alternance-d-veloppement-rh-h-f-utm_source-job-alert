@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Candidature</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0056b3;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        input, textarea, select {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border: 1px solid black;
+        }
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #003f7f;
+        }
+    </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Empêche la soumission par défaut du formulaire
+            window.location.href = "campagne.html"; // Redirige vers la page de confirmation
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulaire de Candidature</h1>
+        <form onsubmit="handleSubmit(event)" method="post" enctype="multipart/form-data">
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="prenom">Prénom:</label>
+            <input type="text" id="prenom" name="prenom" required>
+
+            <label for="experience">Expérience:</label>
+            <textarea id="experience" name="experience" rows="4" required></textarea>
+
+            <label for="intitule">Intitulé du poste:</label>
+            <input type="text" id="intitule" name="intitule" value="Développeur Web" required>
+
+            <label for="entreprise">Nom de l'entreprise:</label>
+            <input type="text" id="entreprise" name="entreprise" value="TechInnov" required>
+
+            <label for="telephone">Numéro de téléphone:</label>
+            <input type="tel" id="telephone" name="telephone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="cv">Insérer votre CV:</label>
+            <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx" required>
+
+            <div>
+                <input type="checkbox" id="confirm" name="confirm" required>
+                <label for="confirm">Je confirme que les informations fournies sont correctes.</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
+    </div>
+</body>
+</html>
